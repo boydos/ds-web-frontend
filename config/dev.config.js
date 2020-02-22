@@ -16,3 +16,23 @@ const devConfig = {
   }
 }
 module.exports = devConfig
+
+// const localProxy = proxy({
+//   target: backend.origin,
+//   changeOrigin: true,
+//   autoRewrite: true,
+//   headers: {
+//     host: backend.host
+//   },
+//   onProxyReq (proxyReq, req) {
+//     Object.keys(req.headers).forEach(function (key) {
+//       proxyReq.setHeader(key, req.headers[key])
+//     })
+//     proxyReq.setHeader('Host', backend.host)
+//   },
+//   onProxyRes (proxyRes, req, res) {
+//     Object.keys(proxyRes.headers).forEach(function (key) {
+//       res.append(key, proxyRes.headers[key])
+//     })
+//   }
+// })
