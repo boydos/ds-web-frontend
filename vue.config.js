@@ -1,0 +1,5 @@
+const baseConfig = require('./config/base.config')
+const devConfig = require('./config/dev.config')
+const prdConfig = require('./config/prd.config')
+const merge = require('webpack-merge')
+module.exports = merge(baseConfig, process.env.NODE_ENV === 'production' ? prdConfig : devConfig)
