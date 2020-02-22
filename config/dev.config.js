@@ -9,7 +9,9 @@ const devConfig = {
     https: process.env.NODE_ENV === 'production',
     hotOnly: false,
     // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
-    proxy: null, // string | Object
+    proxy: {
+      '/api': { target: 'http://localhost:8080/api', changeOrigin: true, secure: false }
+    }, // string | Object
     before: app => {}
   }
 }
